@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 
 function CreatePosts (props) {
-  const [Id, setId] = useState('');
+  const [Id, setId] = useState(0);
   const [message, setMessage] = useState('');
 
   const getUserId = (event) => {
-    const name = event.target.value;
-    setId(props.users.filter(ele => ele.userName === name)[0].userId)
+    setId(parseInt(event.target.value));
   }
 
   const handleChange = (event) => {
@@ -18,18 +17,21 @@ function CreatePosts (props) {
   }
 
   return (
-    <div>
+    <div className="createPosts">
       
       <p>Create post</p>
-      <select value = {props.users.userName}  onChange = {getUserId}>
-          <option value="">Choose User</option>
-          {props.users.map((ele, index) => <option key = {index}>{ele.userName}</option>)};
-      </select>
-      <div>
-        <img src = {props.users.name}/>
-        <input type = 'text' value = {message} onChange = {handleChange} placeholder = "What's on your mind?"/>
+      <div className="userInfo">
+        <select onChange = {getUserId}>
+            <option value="">Choose User</option>
+            {props.users.map((ele, index) => <option value = {ele.userId} key = {index}>{ele.userName}</option>)};
+        </select>
+
+        <div>
+          <img src = {props.users.filter(ele => ele.userId === parseInt(Id))[0].Avatar}/>
+          <input type = 'text' value = {message} onChange = {handleChange} placeholder = "What's on your mind?"/>
+        </div>
+        <button onClick = {submit}>Post</button>
       </div>
-      <button onClick = {submit}>Post</button>
 
     </div>
     

@@ -4,11 +4,11 @@ import Comment from './Comment.js'
 
 function Post (props) {
   return (
-    <div >
+    <div key = {props.key}>
         
-      <div>{(props.users.filter(ele => ele.userId === props.post.userId))[0].userName}</div>
+      <div>{ (props.users.filter(ele => ele.userId === props.post.userId))[0].userName }</div>
       <div> 
-        <img src = {(props.users.filter(ele => ele.userId === props.post.userId))[0].Avatar}/>
+        <img src = { (props.users.filter(ele => ele.userId === props.post.userId))[0].Avatar }/>
         <div>{props.post.time}</div>
         {/* <Time /> */}
       </div>

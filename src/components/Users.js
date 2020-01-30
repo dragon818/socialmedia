@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 
 function Users (props) {
-  const [userName, setUser] = useState('11');
-  const [Avatar, setAvatar] = useState('22');
+  const [userName, setUser] = useState('');
+  const [Avatar, setAvatar] = useState('');
 
   const handleChangeUser = (e) => {
-    setUser(e.target.value);
+    setUser(e.target.value);   
   } 
   const handleChangeAvatar = (e) => {
     setAvatar(e.target.value); 
   } 
 
-  const submit = () => {
+  const submit = (e) => {
     props.createUser(userName, Avatar)
+    setAvatar('');
+    setUser('');
   }
 
   return (
