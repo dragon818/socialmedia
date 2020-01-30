@@ -180,14 +180,29 @@ function App() {
       ele.comment.sort((a,b)=>b.commentLikeCount-a.commentLikeCount)
       return ele;
     })
-    setPosts(allNewPosts)
+    setPosts(allNewPosts);
   }
+  
 
   const [id, setId] = useState('')
 
   const getUserId = (e) => {
     console.log(e.target.value);
     setId(e.target.value) 
+  }
+
+  const changeCommentStatus = (index) => {
+    const allNewPosts = posts.map((element, i) => {
+      if (index === i) {
+        if (element.commentStauts) {
+          element.commentStauts = false;
+        } else {
+          element.commentStauts = true;
+        }
+      } 
+      return element;
+    })
+    setPosts(allNewPosts);
   }
 
   return (
@@ -200,7 +215,7 @@ function App() {
         )}
       </select>
 
-      <Posts setCommentLikeCount = {setCommentLikeCount} createComment = {createComment} selecedUserId = {id} setLikeCount = {setLikeCount} users = {users} posts = {posts}/>
+      <Posts changeCommentStatus = {changeCommentStatus} setCommentLikeCount = {setCommentLikeCount} createComment = {createComment} selecedUserId = {id} setLikeCount = {setLikeCount} users = {users} posts = {posts}/>
 
     </div>
   );

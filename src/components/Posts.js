@@ -9,8 +9,6 @@ function Posts (props) {
     setId(event.target.value);
   }
 
-  const [buttonStatus, setButtonStatus] = useState(false)
-
   const handlePostLikeCilck = (index) => {
     props.setLikeCount(index);
   }
@@ -29,8 +27,12 @@ function Posts (props) {
   }
 
   const handleChange = (e) => {
-    setCommentMessage(e.target.value)
+    setCommentMessage(e.target.value);
   } 
+
+  const handleComment = (index) => {
+    props.changeCommentStatus(index);
+  }
 
   if (!props.selecedUserId) {
     return (
@@ -51,35 +53,38 @@ function Posts (props) {
             
             <div>
               <button name = {post.userId} value = {post.likeCount} onClick = {()=>{handlePostLikeCilck(index)}}>Like:{post.likeCount}</button>
-              <button name = {post.userId} value = {post.likeCount} >Comment</button>
+              <button name = {post.userId} value = {post.commentStauts} onClick = {()=>{handleComment(index)}}>Comment</button>
             </div>
             
-            <div key = {index} className = 'createComment'>
-              <select onChange = {getUserId}>
-                <option value="">Choose User</option>
-                {props.users.map((ele, i) => <option value = {ele.userId} key = {i}>{ele.userName}</option>)};
-              </select>
-              <img src = {props.users.filter(ele => ele.userId === parseInt(Id))[0].Avatar}/>
-              <input type = 'text' value ={commentMessage} onChange = {handleChange}/>
-              <button onClick = {() => {submit(index)}}>发送</button>
-            </div>
-            {
-            post.comment.map((element,i) => {
-              return (
+            {post.commentStauts ? 
+            <div>
+              <div key = {index} className = 'createComment'>
+                <select onChange = {getUserId}>
+                  <option value="">Choose User</option>
+                  {props.users.map((ele, i) => <option value = {ele.userId} key = {i}>{ele.userName}</option>)};
+                </select>
+                <img src = {props.users.filter(ele => ele.userId === parseInt(Id))[0].Avatar}/>
+                <input type = 'text' value ={commentMessage} onChange = {handleChange}/>
+                <button onClick = {() => {submit(index)}}>发送</button>
+              </div>
 
-                <div key = {i}>
-
-                  <div className = 'commentInfo'>
-                    <img src = { (props.users.filter(ele => ele.userId === parseInt(element.userId)))[0].Avatar }/>
-                    <p>{ (props.users.filter(ele => ele.userId === parseInt(element.userId)))[0].userName }:</p>
-                    <span>{element.commentMessage}:</span><span>{element.time}</span>
-                    
-                  </div>
-                  <button onClick = {()=>{handleCommentLikeCilck(index,i)}} value = {element.commentLikeCount} >Like:{element.commentLikeCount}</button>
-                  <button>replay</button>
-                </div>
-              )
-            })
+              {
+                post.comment.map((element,i) => {
+                  return (
+                    <div key = {i}>
+                      <div className = 'commentInfo'>
+                        <img src = { (props.users.filter(ele => ele.userId === parseInt(element.userId)))[0].Avatar }/>
+                        <p>{ (props.users.filter(ele => ele.userId === parseInt(element.userId)))[0].userName }:</p>
+                        <span>{element.commentMessage}:</span><span>{element.time}</span>
+                        
+                      </div>
+                      <button onClick = {()=>{handleCommentLikeCilck(index,i)}} value = {element.commentLikeCount} >Like:{element.commentLikeCount}</button>
+                      <button>replay</button>
+                    </div>
+                  )
+                })
+              }
+            </div> : null
             }
           </div>
         )
@@ -107,35 +112,38 @@ function Posts (props) {
             
             <div>
               <button name = {post.userId} value = {post.likeCount} onClick = {()=>{handlePostLikeCilck(index)}}>Like:{post.likeCount}</button>
-              <button name = {post.userId} value = {post.likeCount} >Comment</button>
+              <button name = {post.userId} value = {post.commentStauts} onClick = {()=>{handleComment(index)}} >Comment</button>
             </div>
             
-            <div key = {index} className = 'createComment'>
-              <select onChange = {getUserId}>
-                <option value="">Choose User</option>
-                {props.users.map((ele, i) => <option value = {ele.userId} key = {i}>{ele.userName}</option>)};
-              </select>
-              <img src = {props.users.filter(ele => ele.userId === parseInt(Id))[0].Avatar}/>
-              <input type = 'text' value ={commentMessage} onChange = {handleChange}/>
-              <button onClick = {() => {submit(index)}}>发送</button>
-            </div>
-            {
-            post.comment.map((element,i) => {
-              return (
+            {post.commentStauts ? 
+            <div>
+              <div key = {index} className = 'createComment'>
+                <select onChange = {getUserId}>
+                  <option value="">Choose User</option>
+                  {props.users.map((ele, i) => <option value = {ele.userId} key = {i}>{ele.userName}</option>)};
+                </select>
+                <img src = {props.users.filter(ele => ele.userId === parseInt(Id))[0].Avatar}/>
+                <input type = 'text' value ={commentMessage} onChange = {handleChange}/>
+                <button onClick = {() => {submit(index)}}>发送</button>
+              </div>
 
-                <div key = {i}>
-
-                  <div className = 'commentInfo'>
-                    <img src = { (props.users.filter(ele => ele.userId === parseInt(element.userId)))[0].Avatar }/>
-                    <p>{ (props.users.filter(ele => ele.userId === parseInt(element.userId)))[0].userName }:</p>
-                    <span>{element.commentMessage}:</span><span>{element.time}</span>
-                    
-                  </div>
-                  <button onClick = {()=>{handleCommentLikeCilck(index,i)}} value = {element.commentLikeCount} >Like:{element.commentLikeCount}</button>
-                  <button>replay</button>
-                </div>
-              )
-            })
+              {
+                post.comment.map((element,i) => {
+                  return (
+                    <div key = {i}>
+                      <div className = 'commentInfo'>
+                        <img src = { (props.users.filter(ele => ele.userId === parseInt(element.userId)))[0].Avatar }/>
+                        <p>{ (props.users.filter(ele => ele.userId === parseInt(element.userId)))[0].userName }:</p>
+                        <span>{element.commentMessage}:</span><span>{element.time}</span>
+                        
+                      </div>
+                      <button onClick = {()=>{handleCommentLikeCilck(index,i)}} value = {element.commentLikeCount} >Like:{element.commentLikeCount}</button>
+                      <button>replay</button>
+                    </div>
+                  )
+                })
+              }
+            </div> : null
             }
           </div>
         )
