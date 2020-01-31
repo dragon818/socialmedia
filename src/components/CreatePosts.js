@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function CreatePosts (props) {
-  const [Id, setId] = useState(0);
+  const [Id, setId] = useState('');
   const [message, setMessage] = useState('');
 
   const getUserId = (event) => {
@@ -26,10 +26,10 @@ function CreatePosts (props) {
             {props.users.map((ele, index) => <option value = {ele.userId} key = {index}>{ele.userName}</option>)};
         </select>
 
-        <div>
-          <img src = {props.users.filter(ele => ele.userId === parseInt(Id))[0].Avatar}/>
-          <input type = 'text' value = {message} onChange = {handleChange} placeholder = "What's on your mind?"/>
-        </div>
+        
+          <img src = {Id === '' ? "http://placekitten.com/300/300" : props.users.filter(ele => ele.userId === Id)[0].Avatar} />
+          <input placeholder = "What's in your mind?" type = 'text' value = {message} onChange = {handleChange}/>
+        
         <button onClick = {submit}>Post</button>
       </div>
 

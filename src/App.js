@@ -29,6 +29,7 @@ function App() {
   const [posts, setPosts] = useState([
     {
       userId : 0,
+      postId: 0,
       message : 'Tesla modleXTesla modleXTesla modleXTesla modleXTesla modleXTesla modleXTesla modleXTesla modleXTesla modleXTesla modleX',
       time : '12:00',
       likeCount: 0,
@@ -39,6 +40,21 @@ function App() {
         commentId : 0,
         commentMessage :'你的头像很好看',
         commentLikeCount : 0,
+        replayStauts: false,
+        replay: [
+          {
+            userId : 0,
+            time : "12:00:06",
+            replayMessage: "是的很好看",
+            likeCount: 0,
+          },
+          {
+            userId : 0,
+            time : "12:00:06",
+            replayMessage: "很好看很好",
+            likeCount: 0,
+          },
+        ]
       },
       {
         time : '12:12',
@@ -46,18 +62,51 @@ function App() {
         commentId : 1,
         commentMessage :'世界',
         commentLikeCount : 0,
+        replayStauts: false,
+        replay: [
+          {
+            userId : 0,
+            time : "12:00:06",
+            replayMessage: "是的很好看",
+            likeCount: 0,
+          },
+          {
+            userId : 0,
+            time : "12:00:06",
+            replayMessage: "很好看很好",
+            likeCount: 0,
+          },
+        ]
       },
       {
         time : '12:11',
         userId : 2,
         commentId : 2,
         commentMessage :'我是休闲鞋',
-        commentLikeCount : 0
+        commentLikeCount : 0,
+        replayStauts: false,
+        replay: [
+          {
+            userId : 0,
+            time : "12:00:06",
+            replayMessage: "是的很好看",
+            likeCount: 0,
+          },
+          {
+            userId : 0,
+            time : "12:00:06",
+            replayMessage: "很好看很好",
+            likeCount: 0,
+          },
+        ]
       }
       ]
     },
+
+
     {
-      userId : 0,
+      userId : 1,
+      postId: 1,
       message : 'Tesla modleY',
       time : '12:02',
       likeCount: 0,
@@ -68,6 +117,21 @@ function App() {
         commentId : 0,
         commentMessage :'你的头像很好看',
         commentLikeCount : 0,
+        replayStauts: false,
+        replay: [
+          {
+            userId : 0,
+            time : "12:00:06",
+            replayMessage: "是的很好看",
+            likeCount: 0,
+          },
+          {
+            userId : 0,
+            time : "12:00:06",
+            replayMessage: "很好看很好",
+            likeCount: 0,
+          },
+        ]
       },
       {
         time : '12:09',
@@ -75,6 +139,21 @@ function App() {
         commentId : 1,
         commentMessage :'世界',
         commentLikeCount : 0,
+        replayStauts: false,
+        replay: [
+          {
+            userId : 0,
+            time : "12:00:07",
+            replayMessage: "是的很好看",
+            likeCount: 0,
+          },
+          {
+            userId : 0,
+            time : "12:00:07",
+            replayMessage: "很好看很好",
+            likeCount: 0,
+          },
+        ]
         
       },
       {
@@ -82,12 +161,30 @@ function App() {
         userId : 2,
         commentId : 2,
         commentMessage :'我是休闲鞋',
-        commentLikeCount : 0
+        commentLikeCount : 0,
+        replayStauts: false,
+        replay: [
+          {
+            userId : 0,
+            time : "12:00:09",
+            replayMessage: "是的很好看",
+            likeCount: 0,
+          },
+          {
+            userId : 0,
+            time : "12:00:09",
+            replayMessage: "很好看很好",
+            likeCount: 0,
+          },
+        ]
       }
       ]
     },
+
+
     {
       userId : 2,
+      postId: 3,
       message : 'Tesla modleW',
       time : '12:04',
       likeCount: 0,
@@ -98,6 +195,21 @@ function App() {
         commentId : 0,
         commentMessage :'你的头像很好看',
         commentLikeCount : 0,
+        replayStauts: false,
+        replay: [
+          {
+            userId : 0,
+            time : "12:00:09",
+            replayMessage: "是的很好看",
+            likeCount: 0,
+          },
+          {
+            userId : 0,
+            time : "12:00:09",
+            replayMessage: "很好看很好",
+            likeCount: 0,
+          },
+        ]
       },
       {
         time : '12:06',
@@ -105,6 +217,21 @@ function App() {
         commentId : 1,
         commentMessage :'世界',
         commentLikeCount : 0,
+        replayStauts: false,
+        replay: [
+          {
+            userId : 0,
+            time : "12:00:09",
+            replayMessage: "是的很好看",
+            likeCount: 0,
+          },
+          {
+            userId : 0,
+            time : "12:00:09",
+            replayMessage: "很好看很好",
+            likeCount: 0,
+          },
+        ]
         
       },
       {
@@ -112,7 +239,22 @@ function App() {
         userId : 2,
         commentId : 2,
         commentMessage :'我是休闲鞋',
-        commentLikeCount : 0
+        commentLikeCount : 0,
+        replayStauts: false,
+        replay: [
+          {
+            userId : 0,
+            time : "12:00:09",
+            replayMessage: "是的很好看",
+            likeCount: 0,
+          },
+          {
+            userId : 0,
+            time : "12:00:09",
+            replayMessage: "很好看很好",
+            likeCount: 0,
+          },
+        ]
       }
       ]
     },
@@ -131,6 +273,7 @@ function App() {
   const createPost = (Id, message) => {
     const newPost = {  
       userId : Id,
+      postId : posts.length,
       message : message,
       time : new Date().toLocaleTimeString(),
       likeCount: 0,
@@ -140,6 +283,30 @@ function App() {
     setPosts([newPost, ...posts])
   }
 
+  const createReplay = (Id, replayMessage, index , i) => {
+    const newReplay = {
+      userId : Id,
+      time : new Date().toLocaleTimeString(),
+      replayMessage: replayMessage,
+      likeCount: 0,
+    }
+
+    const newPosts = posts.map((ele, x) => { 
+      if (x === index) {
+        ele.comment.map((comment,j)=>{
+          if (j === i ){
+            comment.replay.push(newReplay);
+          }
+          return comment;
+        }) 
+      }
+      return ele;
+    });
+    setPosts(newPosts); 
+  }
+
+
+
   const createComment = (id, message,index) => {
     const newComment = {
       time : new Date().toLocaleTimeString(),
@@ -147,6 +314,8 @@ function App() {
       commentId : posts[index].comment.length,
       commentMessage : message,
       commentLikeCount : 0,
+      replayStauts: false,
+      replay:[]
     }
 
     const newPosts = posts.map((ele, i) => { 
@@ -205,18 +374,47 @@ function App() {
     setPosts(allNewPosts);
   }
 
+  // Replay
+  const changeReplayStatus = (index,x) => {
+    const allNewPosts = posts.map((ele,i) => {//post
+      if (i===index) {
+        ele.comment.map((element, j) => { //comment
+          if (x === j) {
+            if (element.replayStauts) {
+              element.replayStauts = false;
+            } else {
+              element.replayStauts = true;
+            }
+          } 
+          return element;
+        });
+      }
+      return ele;
+    })
+    setPosts(allNewPosts);
+  }
+
+
   return (
     <div className="App">
       <Users users = {users} createUser = {createUser}/> 
       <CreatePosts createPost = {createPost} users = {users}/>
-      <select  onChange = {getUserId}>
+      <select className = "fliter" onChange = {getUserId}>
         <option value = ''>Filter By:</option>
         {users.map((ele, index) => <option value = {ele.userId} key = {index} >{ele.userName}</option>
         )}
       </select>
 
-      <Posts changeCommentStatus = {changeCommentStatus} setCommentLikeCount = {setCommentLikeCount} createComment = {createComment} selecedUserId = {id} setLikeCount = {setLikeCount} users = {users} posts = {posts}/>
-
+      <Posts
+        createReplay = {createReplay}
+        changeReplayStatus ={changeReplayStatus} 
+        changeCommentStatus = {changeCommentStatus} 
+        setCommentLikeCount = {setCommentLikeCount} 
+        createComment = {createComment} 
+        selecedUserId = {id} 
+        setLikeCount = {setLikeCount} 
+        users = {users} posts = {posts}
+      />
     </div>
   );
 }

@@ -18,7 +18,7 @@ function Users (props) {
   }
 
   return (
-    <div>
+    <div className = "createUser">
       <input name = 'userName' value = {userName} onChange = {handleChangeUser} type = 'text' placeholder = 'username'/>
       <input name = 'Avatar' value = {Avatar} onChange = {handleChangeAvatar} type = 'text' placeholder = 'userImageLink'/>
       <button onClick = {submit}>Sign in</ button>

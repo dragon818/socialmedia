@@ -3,32 +3,106 @@
   margin: 0;
   padding: 0;
 }
+
+#root {
+  display: flex;
+  justify-content: center;
+}
 .App {
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid black ;
 }
+.createUser {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  border-bottom: 2px solid lightgray;
+  padding : 10px 0;
+}
+
+.createUser input {
+  font-size: 24px;
+}
+
+button {
+  border-radius: 5px;
+  background-color: lightgrey;
+}
+
 
 .createPosts {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.createPosts p {
+  font-size: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid lightgrey;
+  width: 100%;
+  
 }
 
 .userInfo {
   display: flex;
-  flex-direction: column;
-
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  justify-content: space-around;
+  border-bottom: 2px solid lightgrey;
 }
+.fliter {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+
+.userInfo input, .userInfo select, .userInfo button{
+  font-size: 20px;
+}
+
 .post {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: lightcoral;
-  padding: 10px;
-  border: 1px solid lightgray;
-  border-radius: 20px;
+  padding: 10px 0;
+  border: 2px solid royalblue;
+  border-radius: 10px;
   margin-bottom: 10px;
+}
+
+.postMessage {
+  margin: 10px 0px 0px 0px;
+  border-bottom: 2px solid lightgray;
+}
+.likeAndComment {
+  display: flex;
+  justify-content: space-evenly;
+}
+.likeAndComment button{
+ font-size: 15px;
+ padding: 3px;
+ color: blue;
+}
+.selectUseAndComment {
+  margin-top: 10px;
+  border-top: 2px solid lightgray;
+  padding-top: 10px;
+  padding-left: 20px;
+
+}
+
+.selectUseAndReplay {
+  margin-top: 10px;
+  border-top: 2px solid lightgray;
+  padding-top: 10px;
+  padding-left: 20px;
+
 }
 .user {
   display: flex;
@@ -52,5 +126,36 @@ img {
 .createComment {
   display: flex;
   width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
 
+.createReplay {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.createComment input, .createComment select, .createComment button{
+  font-size: 16px;
+}
+
+.createReplay input, .createReplay select, .createReplay button{
+  font-size: 12px;
+}
+
+.replayContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.replay {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.comment {
+  margin: 25px 0;
 }
