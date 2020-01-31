@@ -9,25 +9,25 @@ function Comment (props) {
     let currentTime = new Date().getTime()
     let result = currentTime - time;
     console.log(result);
-    if (result/6000 > 1440 ) { 
+    if (result/60000 > 1440 ) { 
       return (new Date(time).toLocaleDateString() + "---" + new Date(time).toLocaleTimeString())
-    } else if (result/6000 > 720 ) { 
+    } else if (result/60000 > 720 ) { 
       return 'yesterday'
-    } else if (result/6000 > 600) {
+    } else if (result/60000 > 600) {
       return '10h ago'
-    } else if (result/6000 > 300) {
+    } else if (result/60000> 300) {
       return '5h ago'
-    } else if (result/6000 > 240) {
+    } else if (result/60000 > 240) {
       return '4h ago'
-    } else if (result/6000 > 180) {
+    } else if (result/60000 > 180) {
       return '3h ago'
-    } else if (result/6000 > 120) {
+    } else if (result/60000 > 120) {
       return '2h ago'
-    } else if (result/6000 > 60) {
+    } else if (result/60000 > 60) {
       return '1h ago'
-    } else if (result/6000 > 5) {
+    } else if (result/60000 > 5) {
       return '5m ago'
-    } else if (result/6000 > 0) {
+    } else if (result/60000 > 0) {
       return 'Just Now'
     }
 
