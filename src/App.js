@@ -31,11 +31,11 @@ function App() {
       userId : 0,
       postId: 0,
       message : 'Tesla modleXTesla modleXTesla modleXTesla modleXTesla modleXTesla modleXTesla modleXTesla modleXTesla modleXTesla modleX',
-      time : '12:00',
+      time : 1580435627922,
       likeCount: 0,
       commentStauts: false,
       comment : [{
-        time : '12:13',
+        time : 1580436627922,
         userId : 0,
         commentId : 0,
         commentMessage :'你的头像很好看',
@@ -44,20 +44,20 @@ function App() {
         replay: [
           {
             userId : 0,
-            time : "12:00:06",
+            time : 1580437627922,
             replayMessage: "是的很好看",
             likeCount: 0,
           },
           {
             userId : 0,
-            time : "12:00:06",
+            time : 1580438627922,
             replayMessage: "很好看很好",
             likeCount: 0,
           },
         ]
       },
       {
-        time : '12:12',
+        time : 1580435527922,
         userId : 1,
         commentId : 1,
         commentMessage :'世界',
@@ -66,20 +66,20 @@ function App() {
         replay: [
           {
             userId : 0,
-            time : "12:00:06",
+            time : 1580438627922,
             replayMessage: "是的很好看",
             likeCount: 0,
           },
           {
             userId : 0,
-            time : "12:00:06",
+            time : 1580438627922,
             replayMessage: "很好看很好",
             likeCount: 0,
           },
         ]
       },
       {
-        time : '12:11',
+        time : 1580438627922,
         userId : 2,
         commentId : 2,
         commentMessage :'我是休闲鞋',
@@ -88,13 +88,13 @@ function App() {
         replay: [
           {
             userId : 0,
-            time : "12:00:06",
+            time : 1580438627922,
             replayMessage: "是的很好看",
             likeCount: 0,
           },
           {
             userId : 0,
-            time : "12:00:06",
+            time : 1580438627922,
             replayMessage: "很好看很好",
             likeCount: 0,
           },
@@ -108,7 +108,7 @@ function App() {
       userId : 1,
       postId: 1,
       message : 'Tesla modleY',
-      time : '12:02',
+      time : 1580438627922,
       likeCount: 0,
       commentStauts: false,
       comment : [{
@@ -121,20 +121,20 @@ function App() {
         replay: [
           {
             userId : 0,
-            time : "12:00:06",
+            time : 1580438627922,
             replayMessage: "是的很好看",
             likeCount: 0,
           },
           {
             userId : 0,
-            time : "12:00:06",
+            time : 1580438627922,
             replayMessage: "很好看很好",
             likeCount: 0,
           },
         ]
       },
       {
-        time : '12:09',
+        time : 1580438627922,
         userId : 1,
         commentId : 1,
         commentMessage :'世界',
@@ -143,13 +143,13 @@ function App() {
         replay: [
           {
             userId : 0,
-            time : "12:00:07",
+            time : 1580438627922,
             replayMessage: "是的很好看",
             likeCount: 0,
           },
           {
             userId : 0,
-            time : "12:00:07",
+            time : 1580438627922,
             replayMessage: "很好看很好",
             likeCount: 0,
           },
@@ -157,7 +157,7 @@ function App() {
         
       },
       {
-        time : '12:08',
+        time : 1580438627922,
         userId : 2,
         commentId : 2,
         commentMessage :'我是休闲鞋',
@@ -166,13 +166,13 @@ function App() {
         replay: [
           {
             userId : 0,
-            time : "12:00:09",
+            time : 1580438627922,
             replayMessage: "是的很好看",
             likeCount: 0,
           },
           {
             userId : 0,
-            time : "12:00:09",
+            time : 1580438627922,
             replayMessage: "很好看很好",
             likeCount: 0,
           },
@@ -186,11 +186,11 @@ function App() {
       userId : 2,
       postId: 3,
       message : 'Tesla modleW',
-      time : '12:04',
+      time : 1540433627922,
       likeCount: 0,
       commentStauts: false,
       comment : [{
-        time : '12:05',
+        time : 1580438627922,
         userId : 0,
         commentId : 0,
         commentMessage :'你的头像很好看',
@@ -199,20 +199,20 @@ function App() {
         replay: [
           {
             userId : 0,
-            time : "12:00:09",
+            time : 1580438627922,
             replayMessage: "是的很好看",
             likeCount: 0,
           },
           {
             userId : 0,
-            time : "12:00:09",
+            time : 1580438627922,
             replayMessage: "很好看很好",
             likeCount: 0,
           },
         ]
       },
       {
-        time : '12:06',
+        time : 1580438627922,
         userId : 1,
         commentId : 1,
         commentMessage :'世界',
@@ -221,13 +221,13 @@ function App() {
         replay: [
           {
             userId : 0,
-            time : "12:00:09",
+            time : 1580438627922,
             replayMessage: "是的很好看",
             likeCount: 0,
           },
           {
             userId : 0,
-            time : "12:00:09",
+            time : 1580438627922,
             replayMessage: "很好看很好",
             likeCount: 0,
           },
@@ -235,7 +235,7 @@ function App() {
         
       },
       {
-        time : '12:07',
+        time : 1580438627922,
         userId : 2,
         commentId : 2,
         commentMessage :'我是休闲鞋',
@@ -244,13 +244,13 @@ function App() {
         replay: [
           {
             userId : 0,
-            time : "12:00:09",
+            time : 1580438627922,
             replayMessage: "是的很好看",
             likeCount: 0,
           },
           {
             userId : 0,
-            time : "12:00:09",
+            time : 1580438627922,
             replayMessage: "很好看很好",
             likeCount: 0,
           },
@@ -275,7 +275,7 @@ function App() {
       userId : Id,
       postId : posts.length,
       message : message,
-      time : new Date().toLocaleTimeString(),
+      time : new Date().getTime(),
       likeCount: 0,
       commentStauts: false,
       comment : []
@@ -286,7 +286,7 @@ function App() {
   const createReplay = (Id, replayMessage, index , i) => {
     const newReplay = {
       userId : Id,
-      time : new Date().toLocaleTimeString(),
+      time : new Date().getTime(),
       replayMessage: replayMessage,
       likeCount: 0,
     }
@@ -309,7 +309,7 @@ function App() {
 
   const createComment = (id, message,index) => {
     const newComment = {
-      time : new Date().toLocaleTimeString(),
+      time : new Date().getTime(),
       userId : id,
       commentId : posts[index].comment.length,
       commentMessage : message,
